@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Gift Cards - Hs Shopping</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #eaeded;
+        }
+
+        header {
+            background: #131921;
+            color: white;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        .back {
+            background: #ff9900;
+            color: black;
+            padding: 10px 15px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 30px auto;
+            padding: 20px;
+        }
+
+        h2 {
+            font-size: 30px;
+        }
+
+        .cards {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .card {
+            background: white;
+            padding: 25px;
+            width: 250px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px #aaa;
+        }
+
+        .card h3 {
+            font-size: 20px;
+        }
+
+        .price {
+            font-size: 24px;
+            font-weight: bold;
+            margin: 15px 0;
+        }
+
+        button {
+            background: #ff9900;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .custom {
+            background: white;
+            padding: 25px;
+            margin-top: 25px;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>Hs Shopping</h1>
+
+    <a href="index.html" class="back">
+        ← Continue Shopping
+    </a>
+</header>
+
+<div class="container">
+
+    <h2>🎁 Gift Cards</h2>
+
+    <p>Choose a gift card for your friends and family.</p>
+
+    <div class="cards">
+
+        <div class="card">
+            <h3>₹500 Gift Card</h3>
+            <p>Perfect gift for shopping.</p>
+            <div class="price">₹500</div>
+            <button onclick="window.location.href='gift-500.html'">
+            Buy Gift Card
+            </button>
+        </div>
+
+        <div class="card">
+            <h3>₹1000 Gift Card</h3>
+            <p>Give your loved ones more choices.</p>
+            <div class="price">₹1000</div>
+        <button onclick="window.location.href='gift-1000.html'">
+        Buy Gift Card
+        </button>   
+        </div>
+
+        <div class="card">
+            <h3>₹2000 Gift Card</h3>
+            <p>A special gift for special occasions.</p>
+            <div class="price">₹2000</div>
+        <button onclick="window.location.href='gift-2000.html'">
+        Buy Gift Card
+        </button>   
+        </div>
+
+    </div>
+
+    <div class="custom">
+        <h2>Custom Gift Card</h2>
+
+        <p>Choose <your own gift amount.</p>
+    <button onclick="window.location.href='custom-gift-card.html'">
+    Create Custom Gift Card
+    </button>
+
+    </div>
+
+</div>
+
+<script>
+
+function buyGiftCard(amount) {
+    alert("₹" + amount + " Gift Card selected!");
+}
+
+function customGiftCard() {
+
+    let amount = prompt("Enter gift card amount:");
+
+    if (amount && Number(amount) > 0) {
+        alert("₹" + amount + " Custom Gift Card selected!");
+    }
+}
+
+</script>
+
+</body>
+</html>

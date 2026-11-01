@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Buy Now - Hs Shopping</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #eaeded;
+            color: #111;
+        }
+
+        .header {
+            background: #131921;
+            color: white;
+            padding: 18px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header h1 {
+            font-size: 25px;
+        }
+
+        .back-btn {
+            background: #ff9900;
+            color: #111;
+            text-decoration: none;
+            padding: 10px 18px;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 30px auto;
+            padding: 20px;
+        }
+
+        .title {
+            margin-bottom: 20px;
+            font-size: 30px;
+        }
+
+        .checkout-box {
+            background: white;
+            padding: 25px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        .product {
+            display: flex;
+            gap: 25px;
+            align-items: center;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 25px;
+        }
+
+        .product img {
+            width: 150px;
+            height: 150px;
+            object-fit: contain;
+        }
+
+        .product-info h2 {
+            margin-bottom: 12px;
+        }
+
+        .product-info p {
+            margin: 8px 0;
+            font-size: 17px;
+        }
+
+        .quantity {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 12px;
+        }
+
+        .quantity button {
+            width: 35px;
+            height: 35px;
+            border: 1px solid #aaa;
+            background: #eee;
+            cursor: pointer;
+            font-size: 20px;
+        }
+
+        .quantity button:hover {
+            background: #ddd;
+        }
+
+        .quantity span {
+            font-size: 18px;
+            font-weight: bold;
+            min-width: 25px;
+            text-align: center;
+        }
+
+        .section {
+            margin-top: 25px;
+        }
+
+        .section h2 {
+            margin-bottom: 15px;
+        }
+
+        .section input,
+        .section textarea,
+        .section select {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 12px;
+            border: 1px solid #aaa;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .section textarea {
+            height: 100px;
+            resize: vertical;
+        }
+
+        .summary {
+            border-top: 1px solid #ddd;
+            margin-top: 25px;
+            padding-top: 20px;
+        }
+
+        .summary h2 {
+            margin-bottom: 15px;
+        }
+
+        .summary p {
+            margin: 10px 0;
+            font-size: 17px;
+        }
+
+        .grand-total {
+            font-size: 24px;
+            font-weight: bold;
+            margin-top: 15px;
+        }
+
+        .place-order {
+            width: 100%;
+            padding: 15px;
+            margin-top: 20px;
+            background: #ffd814;
+            border: 1px solid #f0c14b;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .place-order:hover {
+            background: #f7ca00;
+        }
+
+        #message {
+            text-align: center;
+            margin-top: 15px;
+            font-weight: bold;
+        }
+
+        .error-box {
+            background: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .error-box a {
+            display: inline-block;
+            margin-top: 15px;
+            background: #ff9900;
+            color: #111;
+            padding: 10px 18px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+        @media (max-width: 600px) {
+
+            .header {
+                padding: 15px;
+            }
+
+            .header h1 {
+                font-size: 20px;
+            }
+
+            .container {
+                padding: 10px;
+            }
+
+            .product {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .product img {
+                width: 120px;
+                height: 120px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+
+    <div class="header">
+
+        <h1>Hs Shopping</h1>
+
+        <a href="index.html" class="back-btn">
+            ← Continue Shopping
+        </a>
+
+    </div>
+
+
+    <div class="container">
+
+        <h1 class="title">Buy Now</h1>
+
+        <div class="checkout-box">
+
+            <!-- PRODUCT -->
+
+            <div id="product-container"></div>
+
+
+            <!-- DELIVERY ADDRESS -->
+
+            <div class="section">
+
+                <h2>Delivery Address</h2>
+
+                <input
+                    type="text"
+                    id="name"
+                    placeholder="Full Name"
+                >
+
+                <input
+                    type="text"
+                    id="mobile"
+                    placeholder="Mobile Number"
+                    maxlength="10"
+                    inputmode="numeric"
+                >
+
+                <textarea
+                    id="address"
+                    placeholder="Enter your full delivery address"
+                ></textarea>
+
+                <input
+                    type="text"
+                    id="pincode"
+                    placeholder="PIN Code"
+                    maxlength="6"
+                    inputmode="numeric"
+                >
+
+            </div>
+
+
+            <!-- PAYMENT -->
+
+            <div class="section">
+
+                <h2>Payment Method</h2>
+
+                <select id="payment">
+
+                    <option value="">
+                        Select Payment Method
+                    </option>
+
+                    <option value="Cash on Delivery">
+                        Cash on Delivery
+                    </option>
+
+                    <option value="UPI">
+                        UPI
+                    </option>
+
+                    <option value="Card">
+                        Credit / Debit Card
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <!-- ORDER SUMMARY -->
+
+            <div class="summary">
+
+                <h2>Order Summary</h2>
+
+                <p>
+                    Product Price:
+                    ₹<span id="product-price">0</span>
+                </p>
+
+                <p>
+                    Delivery: FREE
+                </p>
+
+                <div class="grand-total">
+                    Total:
+                    ₹<span id="grand-total">0</span>
+                </div>
+
+            </div>
+
+
+            <!-- PLACE ORDER -->
+
+            <button
+                type="button"
+                class="place-order"
+                id="place-order-btn"
+            >
+                Place Your Order
+            </button>
+
+            <div id="message"></div>
+
+        </div>
+
+    </div>
+
+
+    <script>
+
+        // ================= GET PRODUCT =================
+
+        let buyNowProduct = null;
+
+        try {
+
+            buyNowProduct =
+                JSON.parse(
+                    localStorage.getItem("hsBuyNow")
+                );
+
+        } catch (error) {
+
+            buyNowProduct = null;
+        }
+
+
+        const productContainer =
+            document.getElementById("product-container");
+
+        let quantity = 1;
+
+
+        // ================= SHOW PRODUCT =================
+
+        if (!buyNowProduct) {
+
+            productContainer.innerHTML = `
+
+                <div class="error-box">
+
+                    <h2>No product selected.</h2>
+
+                    <p>
+                        Please go back and click Buy Now.
+                    </p>
+
+                    <a href="index.html">
+                        Go to Shopping
+                    </a>
+
+                </div>
+
+            `;
+
+        } else {
+
+            productContainer.innerHTML = `
+
+                <div class="product">
+
+                    <img
+                        src="${buyNowProduct.image}"
+                        alt="${buyNowProduct.name}"
+                    >
+
+                    <div class="product-info">
+
+                        <h2>
+                            ${buyNowProduct.name}
+                        </h2>
+
+                        <p>
+                            Price: ₹${buyNowProduct.price}
+                        </p>
+
+                        <div class="quantity">
+
+                            <button
+                                type="button"
+                                id="decrease-btn"
+                            >
+                                −
+                            </button>
+
+                            <span id="quantity">
+                                1
+                            </span>
+
+                            <button
+                                type="button"
+                                id="increase-btn"
+                            >
+                                +
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            `;
+
+            updateTotal();
+        }
+
+
+        // ================= INCREASE =================
+
+        function increaseQuantity() {
+
+            quantity++;
+
+            document.getElementById("quantity").textContent =
+                quantity;
+
+            updateTotal();
+        }
+
+
+        // ================= DECREASE =================
+
+        function decreaseQuantity() {
+
+            if (quantity > 1) {
+
+                quantity--;
+
+                document.getElementById("quantity").textContent =
+                    quantity;
+
+                updateTotal();
+            }
+        }
+
+
+        // ================= BUTTON EVENTS =================
+
+        const increaseBtn =
+            document.getElementById("increase-btn");
+
+        const decreaseBtn =
+            document.getElementById("decrease-btn");
+
+
+        if (increaseBtn) {
+
+            increaseBtn.addEventListener(
+                "click",
+                increaseQuantity
+            );
+        }
+
+
+        if (decreaseBtn) {
+
+            decreaseBtn.addEventListener(
+                "click",
+                decreaseQuantity
+            );
+        }
+
+
+        // ================= UPDATE TOTAL =================
+
+        function updateTotal() {
+
+            if (!buyNowProduct) {
+                return;
+            }
+
+            const price =
+                Number(buyNowProduct.price);
+
+            const total =
+                price * quantity;
+
+            document.getElementById(
+                "product-price"
+            ).textContent = total;
+
+            document.getElementById(
+                "grand-total"
+            ).textContent = total;
+        }
+
+
+        // ================= PLACE ORDER =================
+
+        function placeOrder() {
+
+            const message =
+                document.getElementById("message");
+
+
+            if (!buyNowProduct) {
+
+                message.style.color = "red";
+
+                message.textContent =
+                    "No product selected.";
+
+                return;
+            }
+
+
+            // Get form values
+
+            const name =
+                document.getElementById("name")
+                    .value
+                    .trim();
+
+            const mobile =
+                document.getElementById("mobile")
+                    .value
+                    .trim();
+
+            const address =
+                document.getElementById("address")
+                    .value
+                    .trim();
+
+            const pincode =
+                document.getElementById("pincode")
+                    .value
+                    .trim();
+
+            const payment =
+                document.getElementById("payment")
+                    .value;
+
+
+            // ================= VALIDATION =================
+
+            if (
+                name === "" ||
+                mobile === "" ||
+                address === "" ||
+                pincode === "" ||
+                payment === ""
+            ) {
+
+                message.style.color = "red";
+
+                message.textContent =
+                    "Please fill all details.";
+
+                return;
+            }
+
+
+            if (!/^[0-9]{10}$/.test(mobile)) {
+
+                message.style.color = "red";
+
+                message.textContent =
+                    "Please enter a valid 10-digit mobile number.";
+
+                return;
+            }
+
+
+            if (!/^[0-9]{6}$/.test(pincode)) {
+
+                message.style.color = "red";
+
+                message.textContent =
+                    "Please enter a valid 6-digit PIN code.";
+
+                return;
+            }
+
+
+            // ================= CREATE ORDER =================
+
+            const order = {
+
+                id:
+                    "HS" + Date.now(),
+
+                date:
+                    new Date().toLocaleString(),
+
+                items: [
+
+                    {
+
+                        name:
+                            buyNowProduct.name,
+
+                        price:
+                            Number(buyNowProduct.price),
+
+                        image:
+                            buyNowProduct.image,
+
+                        quantity:
+                            quantity
+
+                    }
+
+                ],
+
+                total:
+                    Number(buyNowProduct.price) *
+                    quantity,
+
+                address:
+                    name +
+                    ", " +
+                    mobile +
+                    ", " +
+                    address +
+                    ", PIN: " +
+                    pincode,
+
+                payment:
+                    payment
+
+            };
+
+
+            // ================= GET OLD ORDERS =================
+
+            let orders = [];
+
+            try {
+
+                orders =
+                    JSON.parse(
+                        localStorage.getItem("hsOrders")
+                    ) || [];
+
+            } catch (error) {
+
+                orders = [];
+            }
+
+
+            // ================= SAVE ORDER =================
+
+            orders.push(order);
+
+            localStorage.setItem(
+                "hsOrders",
+                JSON.stringify(orders)
+            );
+
+
+            // Remove selected Buy Now product
+
+            localStorage.removeItem("hsBuyNow");
+
+
+            // ================= SUCCESS =================
+
+            message.style.color = "green";
+
+            message.textContent =
+                "Order placed successfully!";
+
+
+            // Go to orders page
+
+            setTimeout(function() {
+
+                window.location.href =
+                    "orders.html";
+
+            }, 1000);
+
+        }
+
+
+        // ================= PLACE ORDER BUTTON =================
+
+        const placeOrderBtn =
+            document.getElementById("place-order-btn");
+
+
+        if (placeOrderBtn) {
+
+            placeOrderBtn.addEventListener(
+                "click",
+                placeOrder
+            );
+
+        }
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>All Products - Hs Shopping</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #eaeded;
+            color: #111;
+        }
+
+        header {
+            background: #131921;
+            color: white;
+            padding: 18px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            font-size: 25px;
+        }
+
+        .back-btn {
+            background: #ff9900;
+            color: #111;
+            text-decoration: none;
+            padding: 10px 18px;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 30px auto;
+            padding: 20px;
+        }
+
+        .title {
+            font-size: 30px;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            color: #555;
+            margin-bottom: 25px;
+        }
+
+        .categories {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-bottom: 25px;
+        }
+
+        .categories button {
+            padding: 10px 18px;
+            border: none;
+            border-radius: 5px;
+            background: #fff;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .categories button:hover {
+            background: #ff9900;
+        }
+
+        .products {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .product {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+        }
+
+        .product h3 {
+            margin-bottom: 10px;
+        }
+
+        .product p {
+            color: #555;
+            line-height: 1.5;
+        }
+
+        .price {
+            font-size: 20px;
+            font-weight: bold;
+            margin: 15px 0;
+        }
+
+        .product button {
+            background: #ff9900;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .product button:hover {
+            background: #e68a00;
+        }
+
+        @media (max-width: 900px) {
+            .products {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .products {
+                grid-template-columns: 1fr;
+            }
+
+            header {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+
+    <h1>Hs Shopping</h1>
+
+    <a href="index.html" class="back-btn">
+        ← Continue Shopping
+    </a>
+
+</header>
+
+
+<div class="container">
+
+    <h2 class="title">All Products</h2>
+
+    <p class="subtitle">
+        Explore all products available on Hs Shopping.
+    </p>
+
+
+    <div class="categories">
+
+        <button onclick="showCategory('all')">All</button>
+
+        <button onclick="showCategory('electronics')">
+            Electronics
+        </button>
+
+        <button onclick="showCategory('health')">
+            Health
+        </button>
+
+        <button onclick="showCategory('cloths')">
+            Cloths
+        </button>
+
+        <button onclick="showCategory('toys')">
+            Toys
+        </button>
+
+        <button onclick="showCategory('beauty')">
+            Beauty
+        </button>
+
+        <button onclick="showCategory('furniture')">
+            Furniture
+        </button>
+
+        <button onclick="showCategory('pet')">
+            Pet Care
+        </button>
+
+    </div>
+
+
+    <div class="products">
+
+
+        <div class="product electronics">
+
+            <h3>📱 Electronics</h3>
+
+            <p>Smartphone and electronic products.</p>
+
+            <div class="price">₹1299</div>
+
+            <button onclick="addToCart('Electronics',1299)">
+                Add to Cart
+            </button>
+
+        </div>
+
+
+        <div class="product health">
+
+            <h3>🧴 Health & Personal Care</h3>
+
+            <p>Personal care products for daily use.</p>
+
+            <div class="price">₹499</div>
+
+            <button onclick="addToCart('Health & Personal Care',499)">
+                Add to Cart
+            </button>
+
+        </div>
+
+
+        <div class="product cloths">
+
+            <h3>👕 Cloths</h3>
+
+            <p>Clothing products for everyone.</p>
+
+            <div class="price">₹799</div>
+
+            <button onclick="addToCart('Cloths',799)">
+                Add to Cart
+            </button>
+
+        </div>
+
+
+        <div class="product toys">
+
+            <h3>🧸 Toys</h3>
+
+            <p>Fun toys for children.</p>
+
+            <div class="price">₹599</div>
+
+            <button onclick="addToCart('Toys',599)">
+                Add to Cart
+            </button>
+
+        </div>
+
+
+        <div class="product beauty">
+
+            <h3>💄 Beauty</h3>
+
+            <p>Beauty and personal care products.</p>
+
+            <div class="price">₹899</div>
+
+            <button onclick="addToCart('Beauty',899)">
+                Add to Cart
+            </button>
+
+        </div>
+
+
+        <div class="product furniture">
+
+            <h3>🪑 Furniture</h3>
+
+            <p>Useful furniture products for your home.</p>
+
+            <div class="price">₹2499</div>
+
+            <button onclick="addToCart('Furniture',2499)">
+                Add to Cart
+            </button>
+
+        </div>
+
+
+        <div class="product pet">
+
+            <h3>🐶 Pet Care</h3>
+
+            <p>Products for your pets.</p>
+
+            <div class="price">₹699</div>
+
+            <button onclick="addToCart('Pet Care',699)">
+                Add to Cart
+            </button>
+
+        </div>
+
+
+        <div class="product electronics">
+
+            <h3>🧺 Washing Machine</h3>
+
+            <p>Home appliance for easy washing.</p>
+
+            <div class="price">₹18999</div>
+
+            <button onclick="addToCart('Washing Machine',18999)">
+                Add to Cart
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<script>
+
+function showCategory(category) {
+
+    const products =
+        document.querySelectorAll(".product");
+
+    products.forEach(product => {
+
+        if (
+            category === "all" ||
+            product.classList.contains(category)
+        ) {
+
+            product.style.display = "block";
+
+        } else {
+
+            product.style.display = "none";
+
+        }
+
+    });
+
+}
+
+
+function addToCart(name, price) {
+
+    let cart =
+        JSON.parse(localStorage.getItem("hsCart")) || [];
+
+    cart.push({
+        name: name,
+        price: price,
+        quantity: 1
+    });
+
+    localStorage.setItem(
+        "hsCart",
+        JSON.stringify(cart)
+    );
+
+    alert(name + " added to cart!");
+
+}
+
+</script>
+
+</body>
+</html>

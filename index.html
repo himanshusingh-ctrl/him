@@ -1,0 +1,774 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Hs Shopping</title>
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.0/css/all.min.css">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- ================= NAVBAR ================= -->
+
+<header>
+
+    <div class="navbar">
+
+        <!-- LOGO -->
+       <div class="nav-logo">
+    <a href="index.html" class="logo">
+        <img src="logo2.hs.jpeg" alt="Hs Logo">
+    </a>
+</div>
+     <!-- DELIVER TO -->
+<a href="location.html" class="nav-address" id="deliver-address">
+
+    <p class="add-first">Deliver to</p>
+
+    <div class="add-icon">
+        <i class="fa-solid fa-location-dot"></i>
+        <p class="add-second">India</p>
+    </div>
+
+</a>
+        <!-- SEARCH -->
+        <div class="nav-search">
+
+            <select class="search-select" id="category-select">
+
+                <option value="all">All</option>
+                <option value="health">Health & Personal Care</option>
+                <option value="cloths">Cloths</option>
+                <option value="toys">Arrival Toys</option>
+                <option value="pet">Pet Care</option>
+                <option value="electronics">Electronics</option>
+                <option value="beauty">Beauty Picks</option>
+                <option value="furniture">Furniture</option>
+                <option value="washing">Washing Machine</option>
+
+            </select>
+
+            <input
+                type="text"
+                class="search-input"
+                id="search-input"
+                placeholder="Search products">
+
+            <button class="search-btn" id="search-btn">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+
+        </div>
+
+        <!-- SIGN IN -->
+        <div class="nav-signin" id="signin-btn">
+            <p><span>Hello, sign in</span></p>
+            <p class="nav-second">Account & Lists</p>
+        </div>
+
+        <!-- ORDERS -->
+        <div class="nav-orders" id="orders-btn">
+            <p><span>Returns</span></p>
+            <p class="nav-second">& Orders</p>
+        </div>
+
+        <!-- CART -->
+        <div class="nav-cart" id="cart-btn">
+
+            <i class="fa-solid fa-cart-shopping"></i>
+
+            <span class="cart-count">0</span>
+
+            Cart
+
+        </div>
+        
+        <button id="dark-mode-btn" onclick="toggleDarkMode()">
+        🌙
+        </button>
+       
+    </div>
+
+
+    <!-- ================= SECOND PANEL ================= -->
+
+    <div class="panel">
+
+        <!-- ALL -->
+        <div class="panel-all" id="all-btn">
+
+            <i class="fa-solid fa-bars"></i>
+
+            All
+
+        </div>
+
+
+        <!-- PANEL OPTIONS -->
+
+        <div class="panel-options">
+
+            <p id="deals-btn">Today's Deals</p>
+
+            <p id="customer-btn">Customer Service</p>
+
+            <p id="registry-btn">Registry</p>
+
+            <p id="gift-btn">Gift Cards</p>
+
+            <p id="sell-btn">Sell</p>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+<!-- ================= ALL MENU ================= -->
+
+<div class="all-menu" id="all-menu">
+
+    <div class="all-menu-header">
+
+        <h2>
+            <i class="fa-solid fa-user"></i>
+            Hello, Sign in
+        </h2>
+
+        <button id="close-all-menu">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+
+    </div>
+
+    <div class="all-menu-content">
+
+        <h3>Shop By Category</h3>
+
+        <p data-menu-category="all">All Products</p>
+        <p data-menu-category="health">Health & Personal Care</p>
+        <p data-menu-category="cloths">Cloths</p>
+        <p data-menu-category="toys">Arrival Toys</p>
+        <p data-menu-category="pet">Pet Care</p>
+        <p data-menu-category="electronics">Electronics</p>
+        <p data-menu-category="beauty">Beauty Picks</p>
+        <p data-menu-category="furniture">Furniture</p>
+        <p data-menu-category="washing">Washing Machine</p>
+
+        <h3>Help & Settings</h3>
+
+        <p id="menu-customer">Customer Service</p>
+        <p id="menu-orders">Your Orders</p>
+        <p id="menu-account">Your Account</p>
+
+    </div>
+
+</div>
+
+
+<!-- ================= LOCATION POPUP ================= -->
+
+<div class="location-popup" id="location-popup">
+
+    <div class="location-box">
+
+        <button id="close-location" class="close-location">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+
+        <h2>Choose your location</h2>
+
+        <p>
+            Enter your PIN code to see products available
+            for delivery in your area.
+        </p>
+
+        <input
+            type="text"
+            id="pincode"
+            placeholder="Enter PIN code"
+            maxlength="6">
+
+        <button id="save-location">
+            Save Location
+        </button>
+
+        <p id="location-message"></p>
+
+    </div>
+
+</div>
+
+
+<!-- ================= HERO ================= -->
+
+<div class="hero-section">
+    <div class="hero-slide slide1"></div>
+    <div class="hero-slide slide2"></div>
+    <div class="hero-slide slide3"></div>
+    <div class="hero-slide slide4"></div>
+
+    <div class="hero-message">
+
+        <p>
+            You are on Hs Shopping.
+            <a href="#" id="shop-now">Shop now</a>
+        </p>
+
+    </div>
+
+</div>
+
+<!-- Slider Buttons -->
+<button class="slider-btn prev-btn">&#10094;</button>
+<button class="slider-btn next-btn">&#10095;</button>
+
+<!-- Slider Dots -->
+<div class="slider-dots">
+    <span class="slider-dot active"></span>
+    <span class="slider-dot"></span>
+    <span class="slider-dot"></span>
+    <span class="slider-dot"></span>
+    <span class="slider-dot"></span>
+</div>
+
+
+ <!--================= PRODUCTS =================-->
+
+<div class="shop-section" id="products-section">
+
+
+    <!-- PRODUCT 1 -->
+
+    <div class="box"
+         data-category="health"
+         data-name="Health & Personal Care"
+        onclick="window.location.href='health.html'">
+
+        <div class="box-content">
+
+            <h2>Health & Personal Care</h2>
+
+            <div class="box-img"
+                 style="background-image: url('personal.health.jpg');">
+            </div>
+
+            <p>₹499</p>
+
+            <h2>Explore Product Related To Health and Personal Care</h2>
+            
+          
+        </div>
+
+    </div>
+   
+  
+    <!-- PRODUCT 2 -->
+
+    <div class="box"
+         data-category="cloths"
+         data-name="Cloths"
+         onclick="window.location.href='cloths.html'">
+
+        <div class="box-content">
+
+            <h2>Cloths</h2>
+
+            <div class="box-img"
+                 style="background-image: url('cloths.image.jpg');">
+            </div>
+
+            <p>₹799</p>
+
+           <h2>Explore Product Related To Cloths</h2>
+        </div>
+
+    </div>
+
+
+    <!-- PRODUCT 3 -->
+
+    <div class="box"
+         data-category="toys"
+         data-name="Arrival Toys"
+         onclick="window.location.href='Arrival.html'">
+
+        <div class="box-content">
+
+            <h2>Arrival Toys</h2>
+
+            <div class="box-img"
+                 style="background-image: url('craft.image.jpg');">
+            </div>
+
+            <p>₹599</p>
+
+            <h2>Explore Product Related To Arrival Toys</h2>
+
+        </div>
+
+    </div>
+
+
+    <!-- PRODUCT 4 -->
+
+    <div class="box"
+         data-category="pet"
+         data-name="Pet Care"
+           onclick="window.location.href='pet.html'">
+
+        <div class="box-content">
+
+            <h2>Pet Care</h2>
+
+            <div class="box-img"
+                 style="background-image: url('dog.image.jpg');">
+            </div>
+
+            <p>₹699</p>
+
+            <h2>Explore Product Related To Pet Care</h2>    
+        </div>
+
+    </div>
+
+
+    <!-- PRODUCT 5 -->
+
+    <div class="box"
+         data-category="electronics"
+         data-name="Electronics"
+          onclick="window.location.href='electronics.html'">
+         
+
+        <div class="box-content">
+
+            <h2>Electronics</h2>
+
+            <div class="box-img"
+                 style="background-image: url('phone image.jpg');">
+            </div>
+
+            <p>₹1299</p>
+
+            <h2>Explore Product Related To Electronics</h2>
+
+        </div>
+
+    </div>
+
+
+    <!-- PRODUCT 6 -->
+
+    <div class="box"
+         data-category="beauty"
+         data-name="Beauty Picks"
+           onclick="window.location.href='beauty.html'">
+
+        <div class="box-content">
+
+            <h2>Beauty Picks</h2>
+
+            <div class="box-img"
+                 style="background-image: url('makeup.image.jpg');">
+            </div>
+
+            <p>₹899</p>
+
+            <h2>Explore Product Related To Beauty Picks</h2>
+
+        </div>
+
+    </div>
+
+
+    <!-- PRODUCT 7 -->
+
+    <div class="box"
+         data-category="furniture"
+         data-name="Furniture"
+        onclick="window.location.href='furniture.html'">
+
+        <div class="box-content">
+
+            <h2>Furniture</h2>
+
+            <div class="box-img"
+                 style="background-image: url('table.image.jpg');">
+            </div>
+
+            <p>₹2499</p>
+
+            <h2>Explore Product Related To Furniture</h2>
+        </div>
+
+    </div>
+
+
+    <!-- PRODUCT 8 -->
+
+    <div class="box"
+         data-category="washing"
+         data-name="Washing Machine"
+         onclick="window.location.href='washing.html'">
+
+        <div class="box-content">
+
+            <h2>Washing Machine</h2>
+
+            <div class="box-img"
+                 style="background-image: url('washing.webp');">
+            </div>
+
+            <p>₹18999</p>
+
+            <h2>Explore Product Related To Washing Machine</h2>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- ================= INFO SECTIONS ================= -->
+
+<section id="customer-section" class="info-section">
+
+    <div class="info-container">
+
+        <h2>Customer Service</h2>
+
+        <p>
+            Welcome to Hs Shopping Customer Service.
+        </p>
+
+        <div class="info-cards">
+
+            <div>
+                <i class="fa-solid fa-circle-question"></i>
+                <h3>Help Center</h3>
+                <p>Get help with your shopping and orders.</p>
+            </div>
+
+            <div>
+                <i class="fa-solid fa-truck"></i>
+                <h3>Delivery</h3>
+                <p>Check delivery and order information.</p>
+            </div>
+
+            <div>
+                <i class="fa-solid fa-rotate-left"></i>
+                <h3>Returns</h3>
+                <p>Learn about returns and refunds.</p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section id="registry-section" class="info-section">
+
+    <div class="info-container">
+
+        <h2>Registry</h2>
+
+        <p>
+            Create your Hs Shopping registry and save your favorite products.
+        </p>
+
+        <button class="action-btn" id="create-registry">
+            Create a Registry
+        </button>
+
+    </div>
+
+</section>
+
+
+<section id="gift-section" class="info-section">
+
+    <div class="info-container">
+
+        <h2>Gift Cards</h2>
+
+        <p>
+            Choose an Hs Shopping gift card for your friends and family.
+        </p>
+
+        <div class="gift-options">
+
+            <button class="gift-card" data-value="500">₹500</button>
+            <button class="gift-card" data-value="1000">₹1000</button>
+            <button class="gift-card" data-value="2000">₹2000</button>
+            <button class="gift-card" data-value="5000">₹5000</button>
+
+        </div>
+
+        <p id="gift-message"></p>
+
+    </div>
+
+</section>
+
+
+<section id="sell-section" class="info-section">
+
+    <div class="info-container">
+
+        <h2>Sell on Hs Shopping</h2>
+
+        <p>
+            Start selling your products on Hs Shopping.
+        </p>
+
+        <button class="action-btn" id="start-selling">
+            Start Selling
+        </button>
+
+        <p id="sell-message"></p>
+
+    </div>
+
+</section>
+
+
+<!-- ================= CART ================= -->
+
+<section id="cart-section">
+
+    <div class="cart-container">
+
+        <h2>Your Cart</h2>
+
+        <div class="cart-items"></div>
+
+        <div class="cart-summary">
+
+            <h3>
+                Total:
+                ₹<span id="cart-total">0</span>
+            </h3>
+
+            <button id="checkout-btn">
+                Proceed to Checkout
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= CHECKOUT ================= -->
+
+<section id="checkout-section">
+
+    <div class="checkout-container">
+
+        <h2>Checkout</h2>
+
+        <label>Delivery Address</label>
+
+        <textarea
+            id="address"
+            placeholder="Enter your complete address"></textarea>
+
+        <label>Payment Method</label>
+
+        <select id="payment-method">
+
+            <option value="cod">
+                Cash on Delivery
+            </option>
+
+            <option value="online">
+                Online Payment
+            </option>
+
+        </select>
+
+        <div class="checkout-summary">
+
+            <h3>
+                Order Total:
+                ₹<span id="checkout-total">0</span>
+            </h3>
+
+        </div>
+
+        <button id="place-order">
+            Place Order
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- ================= ORDERS ================= -->
+
+<section id="orders-section">
+
+    <div class="orders-container">
+
+        <h2>Your Orders</h2>
+
+        <div id="orders-container"></div>
+
+    </div>
+
+</section>
+
+<!-- ================= PREMIUM FOOTER ================= -->
+
+<footer class="premium-footer">
+
+    <!-- WHY SHOP WITH US -->
+    <div class="why-shop">
+        <h2>Why Shop With Us?</h2>
+
+        <div class="benefits">
+
+            <div class="benefit">
+                <div class="benefit-icon">🚚</div>
+                <div>
+                    <h3>Fast Delivery</h3>
+                    <p>Get your orders delivered fast</p>
+                </div>
+            </div>
+
+            <div class="benefit">
+                <div class="benefit-icon">🔒</div>
+                <div>
+                    <h3>Secure Payment</h3>
+                    <p>100% secure payment</p>
+                </div>
+            </div>
+
+            <div class="benefit">
+                <div class="benefit-icon">↩️</div>
+                <div>
+                    <h3>Easy Returns</h3>
+                    <p>Hassle free returns</p>
+                </div>
+            </div>
+
+            <div class="benefit">
+                <div class="benefit-icon">🏆</div>
+                <div>
+                    <h3>Quality Products</h3>
+                    <p>Best quality products</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+    <!-- FOOTER MAIN -->
+    <div class="footer-main">
+
+        <!-- BRAND -->
+        <div class="footer-brand">
+
+            <div class="footer-logo">hs<span>⌁</span></div>
+
+            <h2>HS SHOPPING</h2>
+
+            <p>Your one-stop online<br>
+            shopping destination.</p>
+
+            <div class="social-icons">
+                <a href="#">📷</a>
+                <a href="#">f</a>
+                <a href="#">▶</a>
+                <a href="#">in</a>
+            </div>
+
+        </div>
+
+
+        <!-- GET TO KNOW US -->
+        <div class="footer-column">
+            <h3>GET TO KNOW US</h3>
+
+            <a href="#">About Us</a>
+            <a href="#">Contact Us</a>
+            <a href="#">Careers</a>
+            <a href="#">Sell on HS Shopping</a>
+        </div>
+
+
+        <!-- CUSTOMER SERVICE -->
+        <div class="footer-column">
+            <h3>CUSTOMER SERVICE</h3>
+
+            <a href="#">Help Center</a>
+            <a href="#">Returns & Orders</a>
+            <a href="#">Delivery Information</a>
+            <a href="#">Account Help</a>
+        </div>
+
+
+        <!-- POLICIES -->
+        <div class="footer-column">
+            <h3>POLICIES</h3>
+
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms & Conditions</a>
+            <a href="#">Refund Policy</a>
+            <a href="#">Shipping Policy</a>
+        </div>
+
+
+        <!-- CONNECT -->
+        <div class="footer-column">
+            <h3>CONNECT WITH US</h3>
+
+            <a href="#">Instagram</a>
+            <a href="#">Facebook</a>
+            <a href="#">YouTube</a>
+            <a href="#">LinkedIn</a>
+        </div>
+
+    </div>
+
+
+    <!-- COPYRIGHT -->
+    <div class="footer-bottom">
+
+        <p>
+            © 2026 HS Shopping. All Rights Reserved.
+        </p>
+
+    </div>
+
+</footer>
+
+
+<!-- BACK TO TOP -->
+<button id="back-to-top" onclick="window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+})">
+    ↑
+</button>
+
+<script src="script.js"></script>
+
+</body>
+</html>
+

@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Today's Deals - Hs Shopping</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #eaeded;
+            color: #111;
+        }
+
+        /* HEADER */
+
+        .header {
+            background: #131921;
+            color: white;
+            padding: 18px 30px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .header h1 {
+            font-size: 25px;
+        }
+
+        .back-btn {
+            background: #ff9900;
+            color: #111;
+            text-decoration: none;
+            padding: 10px 18px;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+        /* MAIN */
+
+        .container {
+            max-width: 1200px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+
+        .title {
+            font-size: 30px;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            color: #555;
+            margin-bottom: 25px;
+        }
+
+        /* PRODUCTS */
+
+        .products {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .product {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.15);
+        }
+
+        .product img {
+            width: 100%;
+            height: 180px;
+            object-fit: contain;
+            margin-bottom: 15px;
+        }
+
+        .product h3 {
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+
+        .old-price {
+            color: #666;
+            text-decoration: line-through;
+            margin-right: 8px;
+        }
+
+        .price {
+            color: #b12704;
+            font-size: 21px;
+            font-weight: bold;
+        }
+
+        .discount {
+            display: inline-block;
+            background: #cc0c39;
+            color: white;
+            padding: 5px 8px;
+            border-radius: 3px;
+            font-size: 13px;
+            margin: 10px 0;
+        }
+
+        .add-cart {
+            display: block;
+            width: 100%;
+            margin-top: 15px;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background: #ff9900;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .add-cart:hover {
+            background: #e68a00;
+        }
+
+        /* RESPONSIVE */
+
+        @media (max-width: 900px) {
+            .products {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .header {
+                padding: 15px;
+            }
+
+            .container {
+                padding: 0 10px;
+            }
+
+            .products {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="header">
+
+        <h1>Hs Shopping</h1>
+
+        <a href="index.html" class="back-btn">
+            ← Continue Shopping
+        </a>
+
+    </div>
+
+
+    <div class="container">
+
+        <h2 class="title">Today's Deals</h2>
+
+        <p class="subtitle">
+            Great deals and special offers on selected products
+        </p>
+
+
+        <div class="products">
+
+            <!-- PRODUCT 1 -->
+
+            <div class="product">
+
+                <img src="personal.health.jpg" alt="Health & Personal Care">
+
+                <h3>Health & Personal Care</h3>
+
+                <span class="discount">20% OFF</span>
+
+                <p>
+                    <span class="old-price">₹699</span>
+                    <span class="price">₹499</span>
+                </p>
+
+                <button
+                    class="add-cart"
+                    data-name="Health & Personal Care"
+                    data-price="499"
+                    data-image="personal.health.jpg">
+                    Add to Cart
+                </button>
+
+            </div>
+
+
+            <!-- PRODUCT 2 -->
+
+            <div class="product">
+
+                <img src="cloths.image.jpg" alt="Cloths">
+
+                <h3>Cloths</h3>
+
+                <span class="discount">15% OFF</span>
+
+                <p>
+                    <span class="old-price">₹949</span>
+                    <span class="price">₹799</span>
+                </p>
+
+                <button
+                    class="add-cart"
+                    data-name="Cloths"
+                    data-price="799"
+                    data-image="cloths.image.jpg">
+                    Add to Cart
+                </button>
+
+            </div>
+
+
+            <!-- PRODUCT 3 -->
+
+            <div class="product">
+
+                <img src="craft.image.jpg" alt="Toys">
+
+                <h3>Arrival Toys</h3>
+
+                <span class="discount">25% OFF</span>
+
+                <p>
+                    <span class="old-price">₹799</span>
+                    <span class="price">₹599</span>
+                </p>
+
+                <button
+                    class="add-cart"
+                    data-name="Arrival Toys"
+                    data-price="599"
+                    data-image="craft.image.jpg">
+                    Add to Cart
+                </button>
+
+            </div>
+
+
+            <!-- PRODUCT 4 -->
+
+            <div class="product">
+
+                <img src="dog.image.jpg" alt="Pet Care">
+
+                <h3>Pet Care</h3>
+
+                <span class="discount">20% OFF</span>
+
+                <p>
+                    <span class="old-price">₹899</span>
+                    <span class="price">₹699</span>
+                </p>
+
+                <button
+                    class="add-cart"
+                    data-name="Pet Care"
+                    data-price="699"
+                    data-image="dog.image.jpg">
+                    Add to Cart
+                </button>
+
+            </div>
+
+
+            <!-- PRODUCT 5 -->
+
+            <div class="product">
+
+                <img src="phone image.jpg" alt="Electronics">
+
+                <h3>Electronics</h3>
+
+                <span class="discount">18% OFF</span>
+
+                <p>
+                    <span class="old-price">₹1599</span>
+                    <span class="price">₹1299</span>
+                </p>
+
+                <button
+                    class="add-cart"
+                    data-name="Electronics"
+                    data-price="1299"
+                    data-image="phone image.jpg">
+                    Add to Cart
+                </button>
+
+            </div>
+
+
+            <!-- PRODUCT 6 -->
+
+            <div class="product">
+
+                <img src="makeup.image.jpg" alt="Beauty Picks">
+
+                <h3>Beauty Picks</h3>
+
+                <span class="discount">20% OFF</span>
+
+                <p>
+                    <span class="old-price">₹1099</span>
+                    <span class="price">₹899</span>
+                </p>
+
+                <button
+                    class="add-cart"
+                    data-name="Beauty Picks"
+                    data-price="899"
+                    data-image="makeup.image.jpg">
+                    Add to Cart
+                </button>
+
+            </div>
+
+
+            <!-- PRODUCT 7 -->
+
+            <div class="product">
+
+                <img src="table.image.jpg" alt="Furniture">
+
+                <h3>Furniture</h3>
+
+                <span class="discount">15% OFF</span>
+
+                <p>
+                    <span class="old-price">₹2999</span>
+                    <span class="price">₹2499</span>
+                </p>
+
+                <button
+                    class="add-cart"
+                    data-name="Furniture"
+                    data-price="2499"
+                    data-image="table.image.jpg">
+                    Add to Cart
+                </button>
+
+            </div>
+
+
+            <!-- PRODUCT 8 -->
+
+            <div class="product">
+
+                <img src="washing.webp" alt="Washing Machine">
+
+                <h3>Washing Machine</h3>
+
+                <span class="discount">10% OFF</span>
+
+                <p>
+                    <span class="old-price">₹20999</span>
+                    <span class="price">₹18999</span>
+                </p>
+
+                <button
+                    class="add-cart"
+                    data-name="Washing Machine"
+                    data-price="18999"
+                    data-image="washing.webp">
+                    Add to Cart
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <script>
+
+        const addCartButtons =
+            document.querySelectorAll(".add-cart");
+
+
+        addCartButtons.forEach(button => {
+
+            button.addEventListener("click", () => {
+
+                const name =
+                    button.dataset.name;
+
+                const price =
+                    Number(button.dataset.price);
+
+                const image =
+                    button.dataset.image;
+
+
+                let cart =
+                    JSON.parse(localStorage.getItem("hsCart")) || [];
+
+
+                const existingProduct =
+                    cart.find(item => item.name === name);
+
+
+                if (existingProduct) {
+
+                    existingProduct.quantity++;
+
+                } else {
+
+                    cart.push({
+                        name: name,
+                        price: price,
+                        image: image,
+                        quantity: 1
+                    });
+
+                }
+
+
+                localStorage.setItem(
+                    "hsCart",
+                    JSON.stringify(cart)
+                );
+
+
+                alert(name + " added to cart!");
+
+            });
+
+        });
+
+    </script>
+
+</body>
+</html>

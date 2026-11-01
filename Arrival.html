@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Health & Personal Care - HS Shopping</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- ================= NAVBAR ================= -->
+
+    <header>
+
+        <div class="navbar">
+
+            <!-- LOGO -->
+            <div class="nav-logo">
+                <div class="logo">
+                    <img src="logo2.hs.jpeg" alt="HS Shopping">
+                </div>
+            </div>
+
+            <!-- ADDRESS -->
+            <div class="nav-address">
+                <div class="add-first">Deliver to</div>
+
+                <div class="add-icon">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <div class="add-second">India</div>
+                </div>
+            </div>
+
+            <!-- SEARCH -->
+            <div class="nav-search">
+
+                <select class="search-select">
+                    <option>All</option>
+                </select>
+
+                <input
+                    class="search-input"
+                    type="text"
+                    placeholder="Search HS Shopping">
+
+                <button class="search-btn">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+
+            </div>
+
+            <!-- SIGN IN -->
+            <div class="nav-signin"
+                 onclick="window.location.href='signin.html'">
+
+                <span>Hello, sign in</span>
+                <div class="nav-second">Account & Lists</div>
+
+            </div>
+
+            <!-- ORDERS -->
+            <div class="nav-orders"
+                 onclick="window.location.href='orders.html'">
+
+                <span>Returns</span>
+                <div class="nav-second">& Orders</div>
+
+            </div>
+
+            <!-- CART -->
+            <div class="nav-cart"
+                 onclick="window.location.href='cart.html'">
+
+                <i class="fa-solid fa-cart-shopping"></i>
+
+                <span class="cart-count" id="cart-count">
+                    0
+                </span>
+
+                Cart
+
+            </div>
+
+        </div>
+
+
+        <!-- ================= SECOND PANEL ================= -->
+
+        <div class="panel">
+
+            <div class="panel-all"
+                 onclick="window.location.href='index.html'">
+
+                <i class="fa-solid fa-bars"></i>
+                All
+
+            </div>
+
+            <div class="panel-options">
+
+                <p>Today's Deals</p>
+                <p>Customer Service</p>
+                <p>Registry</p>
+                <p>Gift Cards</p>
+                <p>Sell</p>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- ================= PAGE TITLE ================= -->
+
+    <div style="
+        background:white;
+        margin:20px;
+        padding:25px;
+        text-align:center;
+    ">
+
+        <h1>Arrival Toys</h1>
+
+        <p style="margin-top:10px;">
+            Explore products related to Arrival Toys
+        </p>
+
+    </div>
+
+
+    <!-- ================= HEALTH PRODUCTS ================= -->
+
+    <div class="shop-section">
+
+
+        <!-- PRODUCT 1 -->
+
+        <div class="box">
+
+            <div class="box-content">
+
+                <h2>Remote car</h2>
+
+                <div class="box-img"
+                     style="
+                     background-image:url('car image.jpg');
+                     ">
+                </div>
+
+                <p>₹850</p>
+
+                <div class="product-buttons">
+
+                    <button
+                        class="add-cart"
+                        data-name="remote car"
+                        data-price="850"
+                        data-image="car image.jpg">
+
+                        Add to Cart
+
+                    </button>
+
+                    <button
+                        class="buy-now"
+                        data-name="remote car"
+                        data-price="850"
+                        data-image="car image.jpg">
+
+                        Buy Now
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- PRODUCT 2 -->
+
+        <div class="box">
+
+            <div class="box-content">
+
+                <h2>Building Blocks</h2>
+
+                <div class="box-img"
+                     style="
+                     background-image:url('blocks image.webp');
+                     ">
+                </div>
+
+                <p>₹450</p>
+
+                <div class="product-buttons">
+
+                    <button
+                        class="add-cart"
+                        data-name="building blocks"
+                        data-price="450"
+                        data-image="blocks image.webp">
+
+                        Add to Cart
+
+                    </button>
+
+                    <button
+                        class="buy-now"
+                        data-name="Building blocks"
+                        data-price="450"
+                        data-image="blocks image.webp">
+
+                        Buy Now
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- PRODUCT 3 -->
+
+        <div class="box">
+
+            <div class="box-content">
+
+                <h2>Teddy Bear</h2>
+
+                <div class="box-img"
+                     style="
+                     background-image:url('teddy image.jpg');
+                     ">
+                </div>
+
+                <p>₹750</p>
+
+                <div class="product-buttons">
+
+                    <button
+                        class="add-cart"
+                        data-name="teddy bear"
+                        data-price="750"
+                        data-image="teddy image.jpg">
+
+                        Add to Cart
+
+                    </button>
+
+                    <button
+                        class="buy-now"
+                        data-name="teddy bear"
+                        data-price="750"
+                        data-image="teddy image.jpg">
+
+                        Buy Now
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- PRODUCT 4 -->
+
+        <div class="box">
+
+            <div class="box-content">
+
+                <h2>Toy Gun</h2>
+
+                <div class="box-img"
+                     style="
+                     background-image:url('gun image.jpg');
+                     ">
+                </div>
+
+                <p>₹249</p>
+
+                <div class="product-buttons">
+
+                    <button
+                        class="add-cart"
+                        data-name="toy gun"
+                        data-price="249"
+                        data-image="gun image.jpg">
+
+                        Add to Cart
+
+                    </button>
+
+                    <button
+                        class="buy-now"
+                        data-name="toy gun"
+                        data-price="249"
+                        data-image="gun image.jpg">
+
+                        Buy Now
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- PRODUCT 5 -->
+
+        <div class="box">
+
+            <div class="box-content">
+
+                <h2>Puzzle </h2>
+
+                <div class="box-img"
+                     style="
+                     background-image:url('puzzle image.webp');
+                     ">
+                </div>
+
+                <p>₹150</p>
+
+                <div class="product-buttons">
+
+                    <button
+                        class="add-cart"
+                        data-name="puzzle"
+                        data-price="150"
+                        data-image="puzzle image.webp">
+
+                        Add to Cart
+
+                    </button>
+
+                    <button
+                        class="buy-now"
+                        data-name="puzzle"
+                        data-price="150"
+                        data-image="puzzle image.webp">
+
+                        Buy Now
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- PRODUCT 6 -->
+
+        <div class="box">
+
+            <div class="box-content">
+
+                <h2>Kitchen Set</h2>
+
+                <div class="box-img"
+                     style="
+                     background-image:url('kitchen image.webp');
+                     ">
+                </div>
+
+                <p>₹200</p>
+
+                <div class="product-buttons">
+
+                    <button
+                        class="add-cart"
+                        data-name="kitchen set"
+                        data-price="200"
+                        data-image="kitchen image.webp">
+
+                        Add to Cart
+
+                    </button>
+
+                    <button
+                        class="buy-now"
+                        data-name="kitchen set"
+                        data-price="200"
+                        data-image="kitchen image.webp">
+
+                        Buy Now
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+         <!-- PRODUCT 7 -->
+
+        <div class="box">
+
+            <div class="box-content">
+
+                <h2>Toy Train</h2>
+
+                <div class="box-img"
+                     style="
+                     background-image:url('toys train.jpg');
+                     ">
+                </div>
+
+                <p>₹350</p>
+
+                <div class="product-buttons">
+
+                    <button
+                        class="add-cart"
+                        data-name="toy train"
+                        data-price="350"
+                        data-image="toys train.jpg">
+
+                        Add to Cart
+
+                    </button>
+
+                    <button
+                        class="buy-now"
+                        data-name="toy train"
+                        data-price="350"
+                        data-image="toys train.jpg">
+
+                        Buy Now
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+         <!-- PRODUCT 8 -->
+
+        <div class="box">
+
+            <div class="box-content">
+
+                <h2>Musical Toys</h2>
+
+                <div class="box-img"
+                     style="
+                     background-image:url('musical toys.jpg');
+                     ">
+                </div>
+
+                <p>₹450</p>
+
+                <div class="product-buttons">
+
+                    <button
+                        class="add-cart"
+                        data-name="musical toys"
+                        data-price="450"
+                        data-image="musical toys.jpg">
+
+                        Add to Cart
+
+                    </button>
+
+                    <button
+                        class="buy-now"
+                        data-name="musical toys"
+                        data-price="450"
+                        data-image="musical toys.jpg">
+
+                        Buy Now
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- ================= BACK BUTTON ================= -->
+
+    <div style="
+        text-align:center;
+        padding:20px;
+    ">
+
+        <button
+            class="action-btn"
+            onclick="window.location.href='index.html'">
+
+            ← Back to Home
+
+        </button>
+
+    </div>
+
+<!-- ================= PREMIUM FOOTER ================= -->
+
+<footer class="premium-footer">
+
+    <!-- WHY SHOP WITH US -->
+    <div class="why-shop">
+        <h2>Why Shop With Us?</h2>
+
+        <div class="benefits">
+
+            <div class="benefit">
+                <div class="benefit-icon">🚚</div>
+                <div>
+                    <h3>Fast Delivery</h3>
+                    <p>Get your orders delivered fast</p>
+                </div>
+            </div>
+
+            <div class="benefit">
+                <div class="benefit-icon">🔒</div>
+                <div>
+                    <h3>Secure Payment</h3>
+                    <p>100% secure payment</p>
+                </div>
+            </div>
+
+            <div class="benefit">
+                <div class="benefit-icon">↩️</div>
+                <div>
+                    <h3>Easy Returns</h3>
+                    <p>Hassle free returns</p>
+                </div>
+            </div>
+
+            <div class="benefit">
+                <div class="benefit-icon">🏆</div>
+                <div>
+                    <h3>Quality Products</h3>
+                    <p>Best quality products</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+    <!-- FOOTER MAIN -->
+    <div class="footer-main">
+
+        <!-- BRAND -->
+        <div class="footer-brand">
+
+            <div class="footer-logo">hs<span>⌁</span></div>
+
+            <h2>HS SHOPPING</h2>
+
+            <p>Your one-stop online<br>
+            shopping destination.</p>
+
+            <div class="social-icons">
+                <a href="#">📷</a>
+                <a href="#">f</a>
+                <a href="#">▶</a>
+                <a href="#">in</a>
+            </div>
+
+        </div>
+
+
+        <!-- GET TO KNOW US -->
+        <div class="footer-column">
+            <h3>GET TO KNOW US</h3>
+
+            <a href="#">About Us</a>
+            <a href="#">Contact Us</a>
+            <a href="#">Careers</a>
+            <a href="#">Sell on HS Shopping</a>
+        </div>
+
+
+        <!-- CUSTOMER SERVICE -->
+        <div class="footer-column">
+            <h3>CUSTOMER SERVICE</h3>
+
+            <a href="#">Help Center</a>
+            <a href="#">Returns & Orders</a>
+            <a href="#">Delivery Information</a>
+            <a href="#">Account Help</a>
+        </div>
+
+
+        <!-- POLICIES -->
+        <div class="footer-column">
+            <h3>POLICIES</h3>
+
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms & Conditions</a>
+            <a href="#">Refund Policy</a>
+            <a href="#">Shipping Policy</a>
+        </div>
+
+
+        <!-- CONNECT -->
+        <div class="footer-column">
+            <h3>CONNECT WITH US</h3>
+
+            <a href="#">Instagram</a>
+            <a href="#">Facebook</a>
+            <a href="#">YouTube</a>
+            <a href="#">LinkedIn</a>
+        </div>
+
+    </div>
+
+
+    <!-- COPYRIGHT -->
+    <div class="footer-bottom">
+
+        <p>
+            © 2026 HS Shopping. All Rights Reserved.
+        </p>
+
+    </div>
+
+</footer>
+
+
+<!-- BACK TO TOP -->
+<button id="back-to-top" onclick="window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+})">
+    ↑
+</button>
+
+
+
+    <!-- ================= SCRIPT ================= -->
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

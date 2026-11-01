@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Create a Registry - Hs Shopping</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #eaeded;
+            color: #111;
+        }
+
+        /* HEADER */
+
+        .header {
+            background: #131921;
+            color: white;
+            padding: 18px 30px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .header h1 {
+            font-size: 25px;
+        }
+
+        .back-btn {
+            background: #ff9900;
+            color: #111;
+            text-decoration: none;
+
+            padding: 10px 18px;
+
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+        /* CONTAINER */
+
+        .container {
+            max-width: 850px;
+            margin: 35px auto;
+            padding: 0 20px;
+        }
+
+        .title {
+            font-size: 30px;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            color: #555;
+            margin-bottom: 25px;
+        }
+
+        /* FORM */
+
+        .form-box {
+            background: white;
+            padding: 30px;
+
+            border-radius: 8px;
+            border: 1px solid #ddd;
+        }
+
+        .form-box h2 {
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 7px;
+            font-weight: bold;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+
+            width: 100%;
+
+            padding: 12px;
+
+            border: 1px solid #aaa;
+
+            border-radius: 5px;
+
+            font-size: 15px;
+        }
+
+        .form-group textarea {
+
+            height: 100px;
+
+            resize: vertical;
+        }
+
+        /* BUTTON */
+
+        .create-btn {
+
+            background: #ff9900;
+
+            border: none;
+
+            padding: 12px 25px;
+
+            border-radius: 5px;
+
+            font-weight: bold;
+
+            cursor: pointer;
+
+            margin-top: 10px;
+        }
+
+        .create-btn:hover {
+
+            background: #e68a00;
+
+        }
+
+        /* INFO */
+
+        .info {
+
+            margin-top: 25px;
+
+            background: white;
+
+            padding: 25px;
+
+            border-radius: 8px;
+
+            border: 1px solid #ddd;
+        }
+
+        .info h2 {
+
+            margin-bottom: 15px;
+
+        }
+
+        .info p {
+
+            color: #555;
+
+            line-height: 1.6;
+
+            margin-bottom: 8px;
+
+        }
+
+        /* MOBILE */
+
+        @media (max-width: 600px) {
+
+            .header {
+
+                padding: 15px;
+
+            }
+
+            .header h1 {
+
+                font-size: 20px;
+
+            }
+
+            .container {
+
+                padding: 0 10px;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- HEADER -->
+
+    <div class="header">
+
+        <h1>Hs Shopping</h1>
+
+        <a href="index.html" class="back-btn">
+            ← Continue Shopping
+        </a>
+
+    </div>
+
+
+    <!-- MAIN -->
+
+    <div class="container">
+
+        <h2 class="title">
+            Create a Registry
+        </h2>
+
+        <p class="subtitle">
+            Create your own registry and add products
+            that you would like to receive.
+        </p>
+
+
+        <!-- FORM -->
+
+        <div class="form-box">
+
+            <h2>
+                Registry Details
+            </h2>
+
+
+            <form onsubmit="createRegistry(event)">
+
+
+                <div class="form-group">
+
+                    <label>
+                        Registry Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="registryName"
+                        placeholder="Enter registry name"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>
+                        Registry Type
+                    </label>
+
+                    <select id="registryType" required>
+
+                        <option value="">
+                            Select Registry Type
+                        </option>
+
+                        <option value="Birthday">
+                            Birthday
+                        </option>
+
+                        <option value="Wedding">
+                            Wedding
+                        </option>
+
+                        <option value="Baby">
+                            Baby
+                        </option>
+
+                        <option value="Home">
+                            Home
+                        </option>
+
+                        <option value="Other">
+                            Other
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>
+                        Description
+                    </label>
+
+                    <textarea
+                        id="description"
+                        placeholder="Write something about your registry..."
+                    ></textarea>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>
+                        Delivery Address
+                    </label>
+
+                    <input
+                        type="text"
+                        id="address"
+                        placeholder="Enter delivery address"
+                        required
+                    >
+
+                </div>
+
+
+                <button
+                    type="submit"
+                    class="create-btn"
+                >
+                    Create Registry
+                </button>
+
+
+            </form>
+
+        </div>
+
+
+        <!-- INFORMATION -->
+
+        <div class="info">
+
+            <h2>
+                About Registry
+            </h2>
+
+            <p>
+                • Create a registry for your special occasion.
+            </p>
+
+            <p>
+                • Add products that you would like to receive.
+            </p>
+
+            <p>
+                • Share your registry with friends and family.
+            </p>
+
+            <p>
+                • Manage your registry from the My Registry section.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- JAVASCRIPT -->
+
+    <script>
+
+        function createRegistry(event) {
+
+            event.preventDefault();
+
+            let name =
+                document.getElementById("registryName").value;
+
+            alert(
+                "Registry '" + name +
+                "' has been created successfully!"
+            );
+
+        }
+
+    </script>
+
+
+</body>
+
+</html>

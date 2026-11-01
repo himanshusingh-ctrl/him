@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Customer Service - Hs Shopping</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #eaeded;
+            color: #111;
+        }
+
+        .header {
+            background: #131921;
+            color: white;
+            padding: 18px 30px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .header h1 {
+            font-size: 25px;
+        }
+
+        .back-btn {
+            background: #ff9900;
+            color: #111;
+            text-decoration: none;
+            padding: 10px 18px;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+
+        .title {
+            font-size: 30px;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            color: #555;
+            margin-bottom: 25px;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .card {
+            background: white;
+            padding: 25px;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+        }
+
+        .card h3 {
+            margin-bottom: 12px;
+        }
+
+        .card p {
+            color: #555;
+            line-height: 1.5;
+        }
+
+        .card button {
+            margin-top: 18px;
+            padding: 10px 18px;
+            border: none;
+            border-radius: 5px;
+            background: #ff9900;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .contact {
+            margin-top: 25px;
+            background: white;
+            padding: 25px;
+            border-radius: 8px;
+        }
+
+        .contact h2 {
+            margin-bottom: 12px;
+        }
+
+        @media (max-width: 800px) {
+            .cards {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .header {
+                padding: 15px;
+            }
+
+            .container {
+                padding: 0 10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="header">
+
+        <h1>Hs Shopping</h1>
+
+        <a href="index.html" class="back-btn">
+            ← Continue Shopping
+        </a>
+
+    </div>
+
+
+    <div class="container">
+
+        <h2 class="title">Customer Service</h2>
+
+        <p class="subtitle">
+            How can we help you?
+        </p>
+
+
+        <div class="cards">
+
+            <div class="card">
+
+                <h3>📦 Your Orders</h3>
+
+                <p>
+                    Check your orders, delivery details
+                    and order status.
+                </p>
+
+                <button onclick="openOrders()">
+                    View Orders
+                </button>
+
+            </div>
+
+
+            <div class="card">
+
+                <h3>↩️ Returns & Refunds</h3>
+
+                <p>
+                    Need help with returning a product
+                    or getting a refund?
+                </p>
+
+            <button onclick="window.location.href='returns.html'">
+            Returns & Orders
+            </button>
+
+            </div>
+
+
+            <div class="card">
+
+                <h3>💳 Payment Help</h3>
+
+                <p>
+                    Get help with payment methods,
+                    checkout and billing.
+                </p>
+            <button onclick="window.location.href='payment-help.html'">
+            Get Help
+            </button>
+                
+            </div>
+
+
+            <div class="card">
+
+                <h3>🚚 Delivery Help</h3>
+
+                <p>
+                    Get information about delivery
+                    and shipping.
+                </p>
+            <button onclick="window.location.href='delivery.html'">
+            Get Help
+            </button>
+               
+
+            </div>
+
+
+            <div class="card">
+
+                <h3>🔐 Account Help</h3>
+
+                <p>
+                    Need help with your Hs Shopping
+                    account or sign in?
+                </p>
+            <button onclick="window.location.href='account-help.html'">
+            Account Help
+            </button>
+               
+
+            </div>
+
+
+            <div class="card">
+
+                <h3>📞 Contact Us</h3>
+
+                <p>
+                    Contact Hs Shopping for additional
+                    assistance.
+                </p>
+            <button onclick="window.location.href='contact us.html'">
+             Contact Us
+            </button>
+               
+
+            </div>
+
+        </div>
+
+
+        <div class="contact">
+
+            <h2>Need more help?</h2>
+
+            <p>
+                Our customer service section is here
+                to help you with your shopping experience.
+            </p>
+
+        </div>
+
+    </div>
+  <script>
+
+    function openOrders() {
+        window.location.href = "view-orders.html";
+    }
+
+    function openReturns() {
+        window.location.href = "returns.html";
+    }
+
+    function openLogin() {
+        window.location.href = "login.html";
+    }
+
+    function paymentHelp() {
+        alert("Payment help section is coming soon!");
+    }
+
+    function deliveryHelp() {
+        alert("Delivery help section is coming soon!");
+    }
+
+    function contactUs() {
+        alert("Contact support feature is coming soon!");
+    }
+
+</script>
+
+    
+
+</body>
+</html>
